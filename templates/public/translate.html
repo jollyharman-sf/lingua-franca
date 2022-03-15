@@ -1,0 +1,42 @@
+{% extends "public/templates/public_template.html" %}
+
+{% block title %} Translate {% endblock title %}
+
+{% block main %} 
+
+<div class="container">
+    <h1>Translate</h1>
+    <hr>
+    <div class="row">
+        <div class="col">
+            <!-- <form method="post"> -->
+                <select class="form-select" id="option" style="width: 30%; float: right !important ;">
+                    <option selected value="1">English to Punjabi</option>
+                    <option value="2">Punjabi to English</option>
+                </select>
+            <!-- </form> -->
+        </div>
+    </div>
+    <div class="row" style="margin-top: 50px;">
+        <div class="col-md-6">
+                    <div class="form-group">
+                        <h3> Enter Text Here </h3>
+                        <!-- <input class= "form-control" type="text" name="text_area" id="text_area" placeholder="Enter text"> -->
+                        <textarea class="form-control" type="text" name="text_area" id="text_area" placeholder="Enter text" rows="3"></textarea>
+                    </div>
+        </div>
+        <div class="col-md-6">
+                    <div class="form-group">
+                        <h3> Converted Text </h3>
+                        <!-- <input class= "form-control" type="text" name="text_area" id="text_area" placeholder="Enter text"> -->
+                        <textarea class="form-control" type="text" name="result_area" id="result_area" placeholder="Enter text" rows="3"></textarea>
+                    </div>
+        </div>
+    </div>
+    <div class="div" style="text-align: center;">
+        <button type="button" onclick="translating()" class="btn btn-primary" style="margin-top: 20px; text-align: center;"> Translate </button>
+    </div>
+</div>
+
+
+{% endblock main %}
