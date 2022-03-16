@@ -1,6 +1,6 @@
 from base64 import encode
 import json, os
-from utils import translation, writeFile
+from utils import translationEng2Pun, translationPun2Eng, writeFile, preprocess
 from config import SRC_DIR
 from flask import Blueprint, request, Response
 
@@ -14,15 +14,22 @@ def translating():
         req = request.form
         text_area = req["text_area"]
         option = req["option"]
-        print("******************************************************************************************")
+        print("*************************************1****************************************************")
         print(text_area)
-        print(option)
-        writeFile(os.path.join(SRC_DIR, "input.txt"), text_area.split("\n"))
-        print("******************************************************************************************")
-        print(text_area.split("\n"))
-        print("******************************************************************************************")
-
-    translatedText = translation()
+        if option == '1':
+            data = text_area.split("\n")
+            data = [i.strip() for i in data]
+            for i in range(len(data)):
+                data[i] = preprocess(data[i])
+            writeFile(os.path.join(SRC_DIR, "input_english.txt"), data)
+            translatedText = translationEng2Pun()
+            
+        elif option == '2':
+            writeFile(os.path.join(SRC_DIR, "userinput_punjabi.txt"), text_area.split("\n"))
+            print(text_area.split("\n"))
+            translatedText = translationPun2Eng()
+        
+        print("**************************************2****************************************************")
 
     data = {"translation": "done",
             "translated_text_is": translatedText}
