@@ -11,7 +11,7 @@ def readFile(path):
 def writeFile(path, data):
     with open(path, "w") as myfileop:
         # myfileop.writelines(["%s\n" % item  for item in data])
-        myfileop.writelines(data)
+        myfileop.write('\n'.join(data))
         
 def remove_file(path):
     if os.path.isfile(path):
@@ -32,11 +32,8 @@ def translationEng2Pun():
     os.system("onmt_translate -model model/english2punjabi.pt -src static/ip_files/input_english.txt -output static/op_files/output_punjabi.txt")
 
     read_output = readFile(os.path.join(OP_DIR, "output_punjabi.txt"))
-    outputString = ""
-    # for x in output:
-    #     outputString += x
-    # output = [i + "\n" for i in output]
-    read_output = " ".join(read_output)
+    read_output = "".join(read_output)
+    # read_output = read_output.strip()
     print(read_output)
     return read_output
 
@@ -48,10 +45,7 @@ def translationPun2Eng():
     os.system("onmt_translate -model model/punjabi2english.pt -src static/ip_files/input_punjabi.txt -output static/op_files/output_english.txt")
 
     read_output = readFile(os.path.join(OP_DIR, "output_english.txt"))
-    outputString = ""
-    # for x in output:
-    #     outputString += x
-    # output = [i + "\n" for i in output]
-    read_output = " ".join(read_output)
+    read_output = "".join(read_output)
+    # read_output = read_output.strip()
     print(read_output)
     return read_output

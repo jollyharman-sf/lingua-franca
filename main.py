@@ -14,7 +14,6 @@ app.register_blueprint(translate_api)
 def index():
     return render_template("public/index.html")
 
-    
 @app.route("/translate", methods=["GET", "POST"])
 def translate():
     return render_template("public/translate.html")
