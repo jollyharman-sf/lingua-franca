@@ -33,7 +33,7 @@ def translationEng2Pun():
 
     read_output = readFile(os.path.join(OP_DIR, "output_punjabi.txt"))
     read_output = "".join(read_output)
-    # read_output = read_output.strip()
+    read_output = read_output.strip()
     print(read_output)
     return read_output
 
@@ -46,6 +46,6 @@ def translationPun2Eng():
 
     read_output = readFile(os.path.join(OP_DIR, "output_english.txt"))
     read_output = "".join(read_output)
-    # read_output = read_output.strip()
+    read_output = read_output.strip()
     print(read_output)
     return read_output
