@@ -17,8 +17,7 @@ def translating():
         print("*************************************1****************************************************")
         print(text_area)
         if option == '1':
-            data = text_area.split("\n")
-            data = [i.strip() for i in data]
+            data = text_area.strip().split("\n")
             print(len(data))
             for i in range(len(data)):
                 data[i] = preprocess(data[i])
@@ -26,6 +25,8 @@ def translating():
             translatedText = translationEng2Pun()
             
         elif option == '2':
+            data = text_area.strip().split("\n")
+            print(len(data))
             writeFile(os.path.join(SRC_DIR, "input_punjabi.txt"), text_area.split("\n"))
             print(len(text_area.split("\n")))
             translatedText = translationPun2Eng()
