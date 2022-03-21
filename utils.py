@@ -31,14 +31,14 @@ def translationEng2Pun():
 
     os.system("onmt_translate -model model/english2punjabi.pt -src static/ip_files/input_english.txt -output static/op_files/output_punjabi.txt")
 
+    read_output = readFile(os.path.join(OP_DIR, "output_punjabi.txt"))
     outputString = ""
-    output = readFile(os.path.join(OP_DIR, "output_punjabi.txt"))
     # for x in output:
     #     outputString += x
-    output = " ".join(output)
     # output = [i + "\n" for i in output]
-    print(output)
-    return output
+    read_output = " ".join(read_output)
+    print(read_output)
+    return read_output
 
 def translationPun2Eng():
     
@@ -47,10 +47,11 @@ def translationPun2Eng():
 
     os.system("onmt_translate -model model/punjabi2english.pt -src static/ip_files/input_punjabi.txt -output static/op_files/output_english.txt")
 
-    output = readFile(os.path.join(OP_DIR, "output_english.txt"))
+    read_output = readFile(os.path.join(OP_DIR, "output_english.txt"))
+    outputString = ""
     # for x in output:
     #     outputString += x
-    output = " ".join(output)
     # output = [i + "\n" for i in output]
-    print(output)
-    return output
+    read_output = " ".join(read_output)
+    print(read_output)
+    return read_output

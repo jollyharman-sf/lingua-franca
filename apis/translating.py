@@ -25,7 +25,7 @@ def translating():
             translatedText = translationEng2Pun()
             
         elif option == '2':
-            writeFile(os.path.join(SRC_DIR, "userinput_punjabi.txt"), text_area.split("\n"))
+            writeFile(os.path.join(SRC_DIR, "input_punjabi.txt"), text_area.split("\n"))
             print(text_area.split("\n"))
             translatedText = translationPun2Eng()
         
