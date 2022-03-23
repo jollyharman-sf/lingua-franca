@@ -16,17 +16,15 @@ def translating():
         option = req["option"]
         print("*************************************1****************************************************")
         print(text_area)
+        data = text_area.strip().split("\n")
         if option == '1':
-            data = text_area.split("\n")
-            data = [i.strip() for i in data]
-            for i in range(len(data)):
-                data[i] = preprocess(data[i])
             writeFile(os.path.join(SRC_DIR, "input_english.txt"), data)
+            print(data)
             translatedText = translationEng2Pun()
             
         elif option == '2':
-            writeFile(os.path.join(SRC_DIR, "userinput_punjabi.txt"), text_area.split("\n"))
-            print(text_area.split("\n"))
+            writeFile(os.path.join(SRC_DIR, "input_punjabi.txt"), data)
+            print(data)
             translatedText = translationPun2Eng()
         
         print("**************************************2****************************************************")
