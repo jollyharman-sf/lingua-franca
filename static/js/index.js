@@ -17,10 +17,10 @@ function translating(){
     });
 }
 
-function swaping(){
+function swapping(){
 
     var textArea = $('#text_area').val(); 
     var resultArea = $('#result_area').val();
     $('#text_area').val(resultArea);
-    $('#result_area').val(textArea);
+    $('#result_area').val("");
 }
