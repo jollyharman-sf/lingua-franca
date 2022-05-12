@@ -24,3 +24,10 @@ function swapping(){
     $('#text_area').val(resultArea);
     $('#result_area').val("");
 }
+
+function addChar(char){
+
+    var text += char;
+    $('#text_area').val(text);
+    // $('#result_area').val("");
+}

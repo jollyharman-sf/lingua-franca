@@ -29,7 +29,7 @@ def translationEng2Pun():
     output_filepath = os.path.join(OP_DIR, "output_punjabi.txt")
     remove_file(output_filepath)
 
-    os.system("python3 model/helpers/2-subword.py model/english-tokenizer.model model/punjabi-tokenizer.model static/ip_files/input_english.txt static/ip_files/empty_file.txt")
+    os.system("python3 model/helpers/2-subword.py model/english-tokenizer.model model/punjabi-tokenizer.model static/ip_files/input_english.txt model/helpers/empty_file.txt")
     
     os.system("onmt_translate -model model/english2punjabi_lat.pt -src static/ip_files/input_english.txt.subword -output static/op_files/output_punjabi.txt")
     
@@ -47,7 +47,7 @@ def translationPun2Eng():
     output_filepath = os.path.join(OP_DIR, "output_english.txt")
     remove_file(output_filepath)
 
-    os.system("python3 model/helpers/2-subword.py model/punjabi-tokenizer.model model/english-tokenizer.model static/ip_files/input_punjabi.txt static/ip_files/empty_file.txt")
+    os.system("python3 model/helpers/2-subword.py model/punjabi-tokenizer.model model/english-tokenizer.model static/ip_files/input_punjabi.txt model/helpers/empty_file.txt")
     
     os.system("onmt_translate -model model/punjabi2english_lat.pt -src static/ip_files/input_punjabi.txt.subword -output static/op_files/output_english.txt")
     

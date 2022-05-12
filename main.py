@@ -1,9 +1,7 @@
 from flask import Flask
 from flask import render_template, request, redirect, session, g, Response, flash
 
-
 from apis.translating import translate_api
-
 
 app = Flask(__name__)
 

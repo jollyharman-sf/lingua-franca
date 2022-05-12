@@ -131,6 +131,7 @@ Send2Trash==1.8.0
 sentencepiece==0.1.96
 simplejson==3.16.0
 six==1.14.0
+spacy==2.2.4
 systemd-python==234
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
