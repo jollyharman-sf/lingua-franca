@@ -1,4 +1,4 @@
-
+let text = "";
 function translating(){
     var myDataVar = {};                             // object
     myDataVar['text_area'] = $('#text_area').val(); // RHs bringing value of text_area and storing it in JSON object in LHS written in []
@@ -27,7 +27,7 @@ function swapping(){
 
 function addChar(char){
 
-    var text += char;
+    text += char;
     $('#text_area').val(text);
     // $('#result_area').val("");
 }
